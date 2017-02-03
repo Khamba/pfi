@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: doctor_hospitals
+#
+#  id          :integer          not null, primary key
+#  doctor_id   :integer
+#  hospital_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor_id: 
+  hospital_id: 
+
+two:
+  doctor_id: 
+  hospital_id: 

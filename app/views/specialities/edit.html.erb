@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h2 class="text-center col-sm-7">Edit Speciality <%= @speciality.name %></h2>
+  <div class="clearfix"></div>
+  <%= simple_form_for @speciality, html: { class: 'form-horizontal' }, wrapper: :horizontal_input_group do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :name, required: false %>
+
+      <div class="form-actions col-sm-offset-2">
+        <%= f.button :submit, "Update", class: 'btn-lg' %>
+      </div>
+
+    </div>
+  <% end %>
+
+  <p class="col-sm-offset-2 index-link"><%= link_to "All Specialities", specialities_path %></p>
+</div>

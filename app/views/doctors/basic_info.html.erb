@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Specialities</h2>
+  <% if @specialities.count > 0 %>
+    <p>Currently, your specialities are listed as: <%= @specialities.pluck('specialities.name').to_sentence %> </p>
+    <p>You can edit these here.</p>
+  <% else %>
+    <p>You don't have any specialities added. You can add them here.</p>
+  <% end %>
+  <%= form_tag(url: basic_info_doctor_url, method: :post) do %>
+    <select name="doctor[specialities][]" class="selectpicker" multiple data-selected-text-format="count > 2" data-live-search="true" autocomplete="off">
+      <% Speciality.all.each do |speciality| %>
+        <option value=<%= speciality.id %> <%= @specialities.exists?(speciality.id) ? "selected" : "" %>><%= speciality.name %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <%= submit_tag "Update", class: 'btn btn-default' %>
+  <% end %>
+  <br>
+  <h2>Add hospitals</h2>
+  <% if @hospitals.count > 0 %>
+    <p>Currently, your hospitals are listed as: <%= @hospitals.pluck('hospitals.name').to_sentence %> </p>
+    <p>You can edit these here.</p>
+  <% else %>
+    <p>You don't have any hospitals added. You can add them here.</p>
+  <% end %>
+  <%= form_tag(url: basic_info_doctor_url, method: :post) do %>
+    <select name="doctor[hospitals][]" class="selectpicker" multiple data-selected-text-format="count > 2" data-live-search="true" autocomplete="off">
+      <% Hospital.all.each do |hospital| %>
+        <option value=<%= hospital.id %> <%= @hospitals.exists?(hospital.id) ? "selected" : "" %>><%= hospital.name %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <%= submit_tag "Update", class: 'btn btn-default' %>
+  <% end %>
+</div>

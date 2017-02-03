@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h2 class="text-center col-sm-7">Edit Hospital</h2>
+  <div class="clearfix"></div>
+  <%= simple_form_for @hospital, html: { class: 'form-horizontal' }, wrapper: :horizontal_input_group do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :name, required: false %>
+
+      <%= f.simple_fields_for(:address, wrapper: :horizontal_input_group) do |ff| %>
+        <%= ff.input :state, collection: Address::INDIAN_STATES, required: false %>
+        <%= ff.input :city, required: false %>
+        <%= ff.input :pincode, required: false %>
+        <%= ff.input :address_lines, required: false, as: :text %>
+      <% end %>
+
+      <div class="form-actions col-sm-offset-2">
+        <%= f.button :submit, "Update", class: 'btn-lg' %>
+      </div>
+
+    </div>
+  <% end %>
+
+  <p class="col-sm-offset-2 index-link"><%= link_to "All Hospitals", hospitals_path %></p>
+</div>

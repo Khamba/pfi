@@ -1,0 +1,29 @@
+h2.text-center{
+  margin-bottom: 1.5em;
+}
+
+div.form-actions{
+  margin-top: 2.5em;
+  padding-left: 7px;
+}
+
+div.alert{
+  width: 25%;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  text-align: center;
+}
+
+div.bootstrap-select{
+  .btn-default, .btn-default.dropdown-toggle:focus, .btn-default.dropdown-toggle:hover, .btn-default.dropdown-toggle:active, .btn-default:active, .btn-default.active, .btn-default.dropdown-toggle{
+    background-color: white;
+    border-color: #adadad;
+    color: #333;
+  }
+
+  .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+    background-color: transparent;
+    color: #333;
+  }
+}

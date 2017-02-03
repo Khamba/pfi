@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-8 col-sm-8 col-md-6 col-lg-4 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-3">
+    <h3 class="text-center">Search Doctors</h3>
+    <br>
+    <%= simple_form_for(:doctor_search, url: search_doctors_path, method: :get, html: { class: 'form-horizontal' }, wrapper: :horizontal_input_group2) do |f| %>
+
+      <%= f.input :speciality, collection: Speciality.all, input_html: { class: 'selectpicker', "data-live-search" => true, name: 'speciality' }, required: false %>
+      <%= f.input :state, collection: Address::INDIAN_STATES, input_html: { class: 'selectpicker', "data-live-search" => true, name: 'state' }, required: false %>
+      <%= f.input :city, collection: [], input_html: { class: 'selectpicker', "data-live-search" => true, disabled: true, autocomplete: "off", name: 'city' }, required: false %>
+
+      <div class="form-actions pull-right">
+        <%= f.button :submit, "Search", class: 'btn' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

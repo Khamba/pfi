@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Friendly Interface</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if logged_in? %>
+    <% if patient_logged_in? %>
+      <%= render "layouts/navbars/patient_navbar" %>
+    <% elsif doctor_logged_in? %>
+      <%= render "layouts/navbars/doctor_navbar" %>
+    <% elsif admin_logged_in? %>
+      <%= render "layouts/navbars/admin_navbar" %>
+    <% end %>
+  <% else %>
+    <%= render 'layouts/navbars/not_logged_in_navbar' %>
+  <% end %>
+
+  <%= yield %>
+
+  <%= render 'layouts/flash_alerts' %>
+
+</body>
+</html>

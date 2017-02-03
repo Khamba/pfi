@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h2 class="text-center col-sm-7">Registration for New Patient</h2>
+  <div class="clearfix"></div>
+  <%= simple_form_for @patient, html: { class: 'form-horizontal' }, wrapper: :horizontal_input_group do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :name, required: false %>
+      <%= f.input :aadhar_number, required: false %>
+      <%= f.input :mobile_number, required: false %>
+      <%= f.input :email, required: false %>
+      <%= f.input :password, required: false %>
+      <%= f.input :password_confirmation, required: false %>
+
+      <div class="form-actions col-sm-offset-2">
+        <%= f.button :submit, "Register", class: 'btn-lg' %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

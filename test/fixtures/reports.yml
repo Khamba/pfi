@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: reports
+#
+#  id             :integer          not null, primary key
+#  doctor_comment :text
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor_comment: MyText
+
+two:
+  doctor_comment: MyText

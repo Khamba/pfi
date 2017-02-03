@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Your search results</h2>
+  <table class="table table-hover">
+         <thead>
+          <tr>
+            <th>Doctor Name</th>
+            <th>Specialities</th>
+            <th>City</th>
+          </tr>
+         </thead>
+         <tbody>
+          <% @doctors.each do |doctor| %>
+            <tr>
+              <td><%= doctor.name %></td>
+              <td><%= doctor.specialities.map(&:name).to_sentence %></td>
+              <td><%= doctor.hospitals.map(&:address).map { |address| "#{address.city}, #{address.state}" }.to_sentence %></td>
+            </tr>
+          <% end %>
+         </tbody>
+  </table>
+</div>

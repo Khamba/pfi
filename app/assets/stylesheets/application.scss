@@ -1,0 +1,37 @@
+@import "bootstrap-sprockets";
+
+// Variables
+
+  // Colors
+  $brand-primary: #26ae90;
+
+  // Components
+
+  $border-radius-base: 0;
+  $border-radius-large: 1px;
+  $border-radius-small: 0;
+
+  // Navbar
+
+  $navbar-height: 60px;
+  $navbar-default-color: #fff;
+  $navbar-default-bg: #07342a;
+  $navbar-default-link-color: #fff;
+  $navbar-default-link-hover-color: #ddd;
+  $navbar-default-link-active-color: #ccc;
+
+  // Form
+
+  $form-group-margin-bottom: 20px;
+
+  // Button
+  $btn-default-color: #fff;
+  $btn-default-bg: #20997e;
+  $btn-default-border: transparent;
+
+@import "bootstrap";
+@import "bootstrap-select.min";
+
+@import "custom";
+
+@import "crud";
