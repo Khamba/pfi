@@ -65,3 +65,5 @@ gem 'authlogic'
 gem 'bootstrap-sass'
 
 gem 'will_paginate'
+
+gem "passenger", group: :production
