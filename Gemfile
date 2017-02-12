@@ -66,4 +66,4 @@ gem 'bootstrap-sass'
 
 gem 'will_paginate'
 
-gem "passenger", group: :production
+# gem "passenger", group: :production

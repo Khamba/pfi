@@ -32,6 +32,7 @@ class Patient < ActiveRecord::Base
 
   validates :name, presence: true
   validates_format_of :aadhar_number, with: /\A\d{12}\z/, message: "should be an Aadhar Number of 12 digits"
+  validates_uniqueness_of :aadhar_number
   validates_format_of :mobile_number, with: /\A\d{10}/, message: "should be a 10 digit number"
 
   before_validation :strip_aadhar_number_of_spaces
